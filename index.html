@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="bg-dark">
+    <div class="container bg-light">
+        <div class="BT1 ml-5">
+            <h2>BT1: Tính Lương</h2>
+            <div class="BT1__wrap d-flex">
+                <div class="form-group mr-5">
+                    <label for="">Lương 01 Ngày</label>
+                    <input type="text" name="" id="luongMotNgay" class="form-control " placeholder="0">
+                </div>
+                <div class="form-group ">
+                    <label for="">Số Ngày Làm</label>
+                    <input type="text" name="" id="soNgayLam" class="form-control " placeholder="Nhập Số Ngày Làm">
+                </div>
+            </div>
+            <button onclick="tinhTongLuong()" id="tinh" class="btn btn-danger">Tính</button>
+            <div class="mt-2 alert alert-success w-25">
+                Tổng Lương Là: <span id="resultTL"></span>
+            </div>
+        </div>
+        <br><br><hr><br><br>
+        <div class="BT2 ml-5">
+            <h2>BT2: Tính Giá Trị Trung Bình</h2>
+            <div class="BT2__wrap d-flex">
+                <div class="form-group mr-5">
+                    <label for="">Giá Trị Thứ 1</label>
+                    <input type="text" name="" id="number1" class="form-control " placeholder="0">
+                </div>
+                <div class="form-group mr-5">
+                    <label for="">Giá Trị Thứ 2</label>
+                    <input type="text" name="" id="number2" class="form-control " placeholder="0">
+                </div>
+                <div class="form-group mr-5">
+                    <label for="">Giá Trị Thứ 3</label>
+                    <input type="text" name="" id="number3" class="form-control " placeholder="0">
+                </div>
+                <div class="form-group mr-5">
+                    <label for="">Giá Trị Thứ 4</label>
+                    <input type="text" name="" id="number4" class="form-control " placeholder="0">
+                </div>
+                <div class="form-group mr-5">
+                    <label for="">Giá Trị Thứ 5</label>
+                    <input type="text" name="" id="number5" class="form-control " placeholder="0">
+                </div>
+            </div>
+            <button onclick="tinhGTTB()" id="tinhGTTB" class="btn btn-danger">Tính </button>
+            <div class="mt-2 alert alert-success w-25">
+                Giá Trị Trung Bình Là: <span id="resultGTTB"></span>
+            </div>
+        </div>
+        <br><br><hr><br><br>
+        <div class="BT3 ml-5">
+            <h2>BT3: Quy Đổi Tiền</h2>
+            <div class="BT3__wrap ">
+                <div class="form-group w-25">
+                    <label for="">Nhập Số USD Muốn Quy Đổi</label>
+                    <input type="text" name="" id="USD" class="form-control " placeholder="0">
+                </div>
+            </div>
+            <button onclick="quyDoiTien()" id="tinh" class="btn btn-danger">Quy Đổi</button>
+            <div class="mt-2 alert alert-success w-25">
+                VND: <span id="resultQDT"></span>
+            </div>
+        </div>
+        <br><br><hr><br><br>
+        <div class="BT4 ml-5">
+            <h2>BT4: Tính Chu Vi, Diện Tích</h2>
+            <div class="BT1__wrap d-flex">
+                <div class="form-group mr-5">
+                    <label for="">Nhập Chiều Dài</label>
+                    <input type="text" name="" id="chieuDai" class="form-control " placeholder="0">
+                </div>
+                <div class="form-group ">
+                    <label for="">Nhập Chiều Rộng</label>
+                    <input type="text" name="" id="chieuRong" class="form-control " placeholder="0">
+                </div>
+            </div>
+            <button onclick="tinhToan()" id="tinh" class="btn btn-danger">Tính</button>
+            <div class="mt-2 alert alert-success w-25">
+                Chu Vi: <span id="resultChuVi"></span>
+                <br>
+                Diện Tích: <span id="resultDienTich"></span>
+            </div>
+        </div>
+        <br><br><hr><br><br>
+        <div class="BT5 ml-5">
+            <h2>BT5: Tính Tổng 2 Ký Số</h2>
+            <div class="BT5__wrap ">
+                <div class="form-group w-25">
+                    <label for="">Nhập Chữ Số</label>
+                    <input type="text" name="" id="chuSo" class="form-control " placeholder="0">
+                </div>
+            </div>
+            <button onclick="tongKySo()" id="tinh" class="btn btn-danger">Tính</button>
+            <div class="mt-2 alert alert-success w-25">
+                Tổng 2 Ký Số: <span id="resultTKS"></span>
+            </div>
+        </div>
+        <br><br>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
